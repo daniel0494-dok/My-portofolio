@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+body {
+  color: #2c2c2c;
+}
+
+/* BUTTON DEFAULT */
+.button {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+/* BUTTON VARIANTS */
+.submit {
+  background-color: #2c2c2c;
+  color: #c3c4bf;
+  transition-duration: 100ms;
+}
+
+.submit:hover {
+  background-color: #982138;
+  color: azure;
+}
