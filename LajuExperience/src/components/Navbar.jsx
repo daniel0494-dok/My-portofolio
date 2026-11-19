@@ -12,16 +12,16 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="flex p-4 justify-between border-b border-[#d8d8d2]">
+    <div className="flex p-4 justify-between border-b border-brand-600">
       <div className="flex gap-3 items-center group cursor-pointer">
-        <span className="p-1 rounded-xs text-white bg-[#151515] group-hover:bg-[#FF4D00] duration-200">
+        <span className="p-1 rounded-xs text-white bg-brand-800 group-hover:bg-brand-900 duration-200">
           RK
         </span>
         <h1 className="font-bold">RUMAH KEYBOARD</h1>
       </div>
       <ul className=" hidden items-center gap-4 md:flex">
         {menu.map((links) => (
-          <li key={links} className="hover:text-[#FF4D00]">
+          <li key={links} className="hover:text-brand-900">
             <a href="">{links}</a>
           </li>
         ))}
@@ -30,7 +30,7 @@ export default function Navbar() {
         <Button className={"primary flex items-center gap-2 hover:"}>
           <ShoppingCart className="h-5 w-5" />
           CART
-          <span className="bg-[#FF4D00] px-2 rounded-xs">2</span>
+          <span className="bg-brand-900 px-2 rounded-xs">2</span>
         </Button>
         <Button className={""}>
           <Menu className="h-5 w-5" />
