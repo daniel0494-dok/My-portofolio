@@ -1,6 +1,6 @@
-export default function Footer(props) {
+export default function Footer() {
   return (
-    <div class="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between bg-brand-800">
+    <div class="max-w-7xl m-auto lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between bg-brand-800">
       <div class="flex items-center justify-between font-mono text-[11px] text-white/50 border-b border-white/15 pb-3">
         <span>EXPLODED VIEW // GASKET ARCHITECTURE</span>
         <span class="text-signal">REV 2.4</span>

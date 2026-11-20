@@ -1,0 +1,138 @@
+export const products = [
+  {
+    id: 1,
+    sku: "RK-KB-075A",
+    name: "LEOBOG HI75 PRO",
+    category: "KEYBOARD",
+    price: 599000,
+    tags: ["75%", "CNC ALU", "GASKET"],
+    image:
+      "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=700&q=80",
+    desc: "Barebone kit 75% berbahan aluminium CNC solid dengan rotary knob taktil dan struktur gasket mount untuk suara thocky maksimal.",
+    specs: {
+      Layout: "75% (81 Keys + Tactile Knob)",
+      "Case Material": "CNC 6063 Anodized Aluminum",
+      Mounting: "Leaf-Spring Gasket Mount + Poron Foam",
+      PCB: "Hot-Swappable 3/5-Pin, South-Facing RGB",
+    },
+  },
+  {
+    id: 2,
+    sku: "RK-KB-075B",
+    name: "AULA F75 PRO",
+    category: "KEYBOARD",
+    price: 849000,
+    tags: ["75%", "TRI-MODE", "PRE-BUILT"],
+    image:
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=80",
+    desc: "Mechanical keyboard pre-built 75% paling populer dengan konektivitas Tri-Mode (2.4GHz, Bluetooth, Wired) dan 5 lapis peredam akustik.",
+    specs: {
+      Layout: "75% Compact + Multi-Function Knob",
+      Connectivity: "Tri-Mode (USB-C / 2.4GHz / BT 5.0)",
+      Keycaps: "PBT Double-Shot Cherry Profile",
+      Battery: "4000mAh Rechargeable Lithium",
+    },
+  },
+  {
+    id: 3,
+    sku: "RK-SW-101",
+    name: "AKKO ROSEWOOD SWITCH (10 PCS)",
+    category: "SWITCH",
+    price: 43000,
+    tags: ["LINEAR 40G", "5-PIN", "DEEP THOCK"],
+    image:
+      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=700&q=80",
+    desc: "Switch linear ringan dengan karakter suara rendah dan dalam (deep thocky), sudah ter-lubrikasi presisi dari pabrik.",
+    specs: {
+      Type: "Linear (Factory Lubed)",
+      "Operating Force": "40g ± 5g",
+      "Total Travel": "4.0mm | Pre-Travel: 2.0mm",
+      Pin: "5-Pin PCB Mount",
+    },
+  },
+  {
+    id: 4,
+    sku: "RK-SW-102",
+    name: "HMX LEMON GRAPE SWITCH (10 PCS)",
+    category: "SWITCH",
+    price: 35000,
+    tags: ["LINEAR 45G", "LONG POLE", "CLACKY"],
+    image:
+      "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=700&q=80",
+    desc: "Switch linear HMX dengan stem long-pole yang menghasilkan bottom-out crisp, tajam, dan minim stem wobble.",
+    specs: {
+      Type: "Linear Long-Pole (Factory Lubed)",
+      "Operating Force": "45g | Bottom-Out: 52g",
+      Housing: "PA12 Nylon Bottom / Modified Top",
+      Pin: "5-Pin PCB Mount",
+    },
+  },
+  {
+    id: 5,
+    sku: "RK-KB-075C",
+    name: "SHADOW ZEUS75 PRO",
+    category: "KEYBOARD",
+    price: 699000,
+    tags: ["75%", "RAPID TRIGGER", "PBT"],
+    image:
+      "https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?auto=format&fit=crop&w=700&q=80",
+    desc: "Keyboard kompetitif 75% Tri-Mode dengan dukungan fitur SOCD & respons latensi rendah untuk gaming maupun produktivitas harian.",
+    specs: {
+      Layout: "75% (82 Keys)",
+      Features: "Low-Latency Mode, Gasket Structure",
+      Keycaps: "PBT Double-Shot Side/Top Print",
+      PCB: "Full-Key Hot-Swappable",
+    },
+  },
+  {
+    id: 6,
+    sku: "RK-SW-103",
+    name: "GATERON MILKY YELLOW PRO (10 PCS)",
+    category: "SWITCH",
+    price: 33000,
+    tags: ["LINEAR 50G", "PRE-LUBED", "CLASSIC"],
+    image:
+      "https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=700&q=80",
+    desc: "Switch linear legendaris dengan milky housing untuk difusi RGB lembut dan feel tekanan yang konsisten serta halus.",
+    specs: {
+      Type: "Linear KS-3X1 Pro (Factory Lubed)",
+      "Operating Force": "50g ± 15g",
+      "Total Travel": "4.0mm | Pre-Travel: 2.0mm",
+      Pin: "5-Pin PCB Mount",
+    },
+  },
+  {
+    id: 7,
+    sku: "RK-KB-075W",
+    name: "WOMIER WD75 WALNUT",
+    category: "KEYBOARD",
+    price: 1859000,
+    tags: ["75%", "REAL WALNUT", "VIA"],
+    image:
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=80",
+    desc: "Edisi eksklusif menggunakan casing kayu Walnut asli bertekstur alami, dilengkapi FR4 plate dan dukungan kustomisasi penuh QMK/VIA.",
+    specs: {
+      "Case Material": "Natural North American Walnut Wood",
+      "Plate & Firmware": "FR4 Plate + QMK / VIA Programmable",
+      Connectivity: "Tri-Mode Wireless + USB-C",
+      Mounting: "Gasket Mount System",
+    },
+  },
+  {
+    id: 8,
+    sku: "RK-ACC-201",
+    name: "PERMATEX 22058 + LUBE KIT",
+    category: "ACCESORIES",
+    price: 27000,
+    tags: ["STABILIZER LUBE", "BRUSH 00", "MODDING"],
+    image:
+      "https://images.unsplash.com/photo-1595044426077-d36d9236d54a?auto=format&fit=crop&w=700&q=80",
+    desc: "Paket esensial stabilizer tuning berisi Dielectric Grease Permatex 22058 dan kuas presisi No. 00 untuk menghilangkan suara kawat rattle.",
+    specs: {
+      Contents: "Permatex 22058 (Repack/Tube) + Precision Brush",
+      Application: "Stabilizer Wire & Housing Tuning",
+      Viscosity: "High-Viscosity Dielectric Silicone",
+      Compatibility: "Plate-Mount & Screw-In Stabilizers",
+    },
+  },
+];
