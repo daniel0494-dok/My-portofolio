@@ -6,6 +6,7 @@ export const products = [
     category: "KEYBOARD",
     price: 599000,
     tags: ["75%", "CNC ALU", "GASKET"],
+    sold: 100,
     image:
       "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=700&q=80",
     desc: "Barebone kit 75% berbahan aluminium CNC solid dengan rotary knob taktil dan struktur gasket mount untuk suara thocky maksimal.",
@@ -23,6 +24,7 @@ export const products = [
     category: "KEYBOARD",
     price: 849000,
     tags: ["75%", "TRI-MODE", "PRE-BUILT"],
+    sold: 99,
     image:
       "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=80",
     desc: "Mechanical keyboard pre-built 75% paling populer dengan konektivitas Tri-Mode (2.4GHz, Bluetooth, Wired) dan 5 lapis peredam akustik.",
@@ -40,6 +42,7 @@ export const products = [
     category: "SWITCH",
     price: 43000,
     tags: ["LINEAR 40G", "5-PIN", "DEEP THOCK"],
+    sold: 70,
     image:
       "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=700&q=80",
     desc: "Switch linear ringan dengan karakter suara rendah dan dalam (deep thocky), sudah ter-lubrikasi presisi dari pabrik.",
@@ -57,6 +60,7 @@ export const products = [
     category: "SWITCH",
     price: 35000,
     tags: ["LINEAR 45G", "LONG POLE", "CLACKY"],
+    sold: 150,
     image:
       "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=700&q=80",
     desc: "Switch linear HMX dengan stem long-pole yang menghasilkan bottom-out crisp, tajam, dan minim stem wobble.",
@@ -74,6 +78,7 @@ export const products = [
     category: "KEYBOARD",
     price: 699000,
     tags: ["75%", "RAPID TRIGGER", "PBT"],
+    sold: 76,
     image:
       "https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?auto=format&fit=crop&w=700&q=80",
     desc: "Keyboard kompetitif 75% Tri-Mode dengan dukungan fitur SOCD & respons latensi rendah untuk gaming maupun produktivitas harian.",
@@ -91,6 +96,7 @@ export const products = [
     category: "SWITCH",
     price: 33000,
     tags: ["LINEAR 50G", "PRE-LUBED", "CLASSIC"],
+    sold: 300,
     image:
       "https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=700&q=80",
     desc: "Switch linear legendaris dengan milky housing untuk difusi RGB lembut dan feel tekanan yang konsisten serta halus.",
@@ -108,6 +114,7 @@ export const products = [
     category: "KEYBOARD",
     price: 1859000,
     tags: ["75%", "REAL WALNUT", "VIA"],
+    sold: 177,
     image:
       "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=80",
     desc: "Edisi eksklusif menggunakan casing kayu Walnut asli bertekstur alami, dilengkapi FR4 plate dan dukungan kustomisasi penuh QMK/VIA.",
@@ -125,6 +132,7 @@ export const products = [
     category: "ACCESORIES",
     price: 27000,
     tags: ["STABILIZER LUBE", "BRUSH 00", "MODDING"],
+    sold: 96,
     image:
       "https://images.unsplash.com/photo-1595044426077-d36d9236d54a?auto=format&fit=crop&w=700&q=80",
     desc: "Paket esensial stabilizer tuning berisi Dielectric Grease Permatex 22058 dan kuas presisi No. 00 untuk menghilangkan suara kawat rattle.",

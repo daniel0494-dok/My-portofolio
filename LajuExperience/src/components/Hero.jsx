@@ -1,6 +1,9 @@
 import Button from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import JumboImg from "../assets/IMG_20261118_162515.jpg";
+// import JumboImg from "../assets/IMG_20261118_162515.jpg";
+import { useState } from "react";
+import { products } from "../data/product";
+import { amount } from "../lib/utils";
 
 export default function Hero() {
   const offer = [
@@ -18,15 +21,22 @@ export default function Hero() {
     },
   ];
 
+  const bestSeller = [...products].sort((a, b) => b.sold - a.sold).slice(0, 3);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const currentProduct = bestSeller[activeIndex];
+
   return (
-    <div className="max-w-7xl m-auto gap-10 items-center">
-      <div className="flex flex-col gap-8 px-4 py-8 items-start">
+    <div className="max-w-7xl m-auto items-center grid grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] gap-10  px-4 py-10">
+      <div className="flex flex-col gap-8 items-start py-10">
         <div className="flex border items-center border-brand-600 bg-brand-400 p-1 text-brand-700 ">
           <span className="inline-block h-2 w-2 bg-brand-900 mx-4"></span>
           <span className="">[ EST. JAKARTA // CUSTOM & ENTHUSIAST GEAR ]</span>
         </div>
 
         <h1 className="font-bold text-6xl">
+          <span className="text-brand-900">//</span>
           PRECISION TACTILE <span className="text-brand-900">HARDWARE.</span>
         </h1>
         <p className="text-brand-700">
@@ -34,7 +44,7 @@ export default function Hero() {
           keycaps profil presisi, hingga perlengkapan modding untuk pengalaman
           mengetik berkarakter tanpa kompromi.
         </p>
-        <div className="grid w-full max-w-xl grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3">
+        <div className="flex gap-3">
           <Button
             className={
               "secondary flex items-center justify-center gap-2 font-bold"
@@ -47,7 +57,7 @@ export default function Hero() {
         </div>
         <div className="grid grid-cols-3 bg-brand-400  border border-brand-600">
           {offer.map((o) => (
-            <div className="offer flex flex-col gap-2 p-3">
+            <div key={o.title} className="offer flex flex-col gap-2 p-3">
               <span className="text-brand-700">{o.title}</span>
               <span className="font-bold">{o.desc}</span>
             </div>
@@ -64,33 +74,36 @@ export default function Hero() {
             <div className="py-4 border-b border-brand-600">
               <div className="relative">
                 <img
-                  className="w-full h-96 aspect-square object-center object-cover"
-                  src={JumboImg}
-                  alt=""
+                  className="w-full max-h-100 aspect-square object-center object-cover"
+                  src={currentProduct.image}
+                  alt={currentProduct.name}
                 />
                 <span className="px-4 absolute top-[3%] left-[3%] bg-brand-800 text-brand-400 ">
-                  GASKET MOUNT // 75% LAYOUT
-                </span>
-                <span className="px-4 absolute bottom-[3%] right-[3%] bg-brand-400 border border-brand-800">
-                  CNC 6063 ALUMINUM
+                  {currentProduct.tags.join("//")}
                 </span>
               </div>
             </div>
             <div className="flex py-8 gap-4">
               <div className="">
-                <h1 className="font-bold">LEOBOG HI75C PRO</h1>
-                <p className="text-brand-700">
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
-                </p>
+                <h1 className="font-bold">{currentProduct.name}</h1>
+                <p className="text-brand-700">{currentProduct.desc}</p>
               </div>
               <div className="">
-                <span className="text-brand-900 font-bold">$ 199</span>
+                <span className="text-brand-900 font-bold">
+                  {amount(currentProduct.price)}
+                </span>
               </div>
             </div>
             <div className="flex w-full gap-2">
-              <Button className={"tertiary flex-1"}>Button 1</Button>
-              <Button className={"tertiary flex-1"}>Button 2</Button>
-              <Button className={"tertiary flex-1"}>Button 3</Button>
+              {bestSeller.map((item, index) => (
+                <Button
+                  key={item.id}
+                  onClick={() => setActiveIndex(index)}
+                  className={`tertiary flex-1 ${activeIndex === index ? "bg-brand-800 text-brand-400" : ""}`}
+                >
+                  {item.name}
+                </Button>
+              ))}
             </div>
           </div>
         </div>

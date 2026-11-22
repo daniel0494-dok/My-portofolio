@@ -1,18 +1,15 @@
 import Button from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { Menu } from "lucide-react";
+import { useState } from "react";
 
-export default function Navbar() {
-  const menu = [
-    "KEYBOARDS",
-    "SWITCHES",
-    "KEYCAPS",
-    "MODDING & LUBE",
-    "DESKAMTS & TOOLS",
-  ];
+export default function Navbar({ totalItems, onOpenCart }) {
+  const menu = ["KEYBOARDS", "SWITCHES", "KEYCAPS", "MODDING & LUBE"];
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className=" border-b border-brand-600">
+    <div className=" bg-brand-500 z-10 border-b border-brand-600 sticky top-0">
       <div className="flex p-4 max-w-7xl justify-between m-auto">
         <div className="flex gap-3 items-center group cursor-pointer">
           <span className="p-1 rounded-xs text-white bg-brand-800 group-hover:bg-brand-900 duration-200">
@@ -28,15 +25,35 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="flex gap-4">
-          <Button className={"primary flex items-center gap-2 hover:"}>
+          <Button
+            onClick={onOpenCart}
+            className={"primary flex items-center gap-2 hover:"}
+          >
             <ShoppingCart className="h-5 w-5" />
             CART
-            <span className="bg-brand-900 px-2 rounded-xs">2</span>
+            <span className="bg-brand-900 px-2 rounded-xs">{totalItems}</span>
           </Button>
-          <Button className={""}>
+          <Button
+            onClick={() => setIsOpen((prev) => !prev)}
+            className={"md:hidden"}
+          >
             <Menu className="h-5 w-5" />
           </Button>
         </div>
+      </div>
+      <div
+        className={`grid transition-all duration-300 ease-in-out md:hidden ${isOpen === false ? "grid-rows-[0fr] opacity-0" : "grid-rows-[1fr] opacity-100"}`}
+      >
+        <ul className="md:hidden bg-brand-400 overflow-hidden">
+          {menu.map((links) => (
+            <li
+              key={links}
+              className="hover:text-brand-900 p-4 border-b border-brand-600"
+            >
+              <a href="">{links}</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
