@@ -4,7 +4,7 @@ import Information from "./components/Information";
 import Catalogue from "./components/Catalogue";
 import Footer from "./components/Footer";
 import CartDrawer from "./components/ui/CartDrawer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -25,6 +25,14 @@ function App() {
   };
 
   const totalItems = cart.reduce((total, item) => total + item.qty, 0);
+
+  useEffect(() => {
+    if (totalItems > 0) {
+      document.title = `RumahKeyboard (${totalItems} product)`;
+    } else {
+      document.title = "RumahKeyboard";
+    }
+  }, [totalItems]);
 
   const updateQty = (id, delta) => {
     setCart((prev) =>

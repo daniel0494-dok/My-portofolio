@@ -62,6 +62,7 @@ export default function CartDrawer({
           <span className="font-bold">TOTAL</span>
           <span className="font-bold">{amount(totalPrice)}</span>
         </div>
+        <Button className={"primary mt-4"}>Check Out</Button>
       </div>
     </div>
   );

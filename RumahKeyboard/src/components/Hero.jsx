@@ -65,7 +65,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="bg-brand-400 border border-brand-600 py-10 ">
-        <div className="px-4">
+        <div className="p-10">
           <div className="">
             <div className="border-b flex justify-between border-brand-600 pb-8">
               <span className="text-brand-700">LEOBOG HI75C PRO</span>
@@ -94,7 +94,7 @@ export default function Hero() {
                 </span>
               </div>
             </div>
-            <div className="flex w-full gap-2">
+            <div className="flex flex-col md:flex-row w-full gap-2">
               {bestSeller.map((item, index) => (
                 <Button
                   key={item.id}
