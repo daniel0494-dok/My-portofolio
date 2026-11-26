@@ -1,12 +1,11 @@
 import Button from "./ui/button";
+import { useStore } from "../context/StoreContext";
 import { useState } from "react";
 
-export default function ({
-  products,
-  onAddProduct,
-  onUpdateProduct,
-  onDeleteProduct,
-}) {
+export default function () {
+  const { products, addProduct, updateProduct, deleteProduct, resetProducts } =
+    useStore();
+
   const [formData, setFormData] = useState({
     sku: "",
     name: "",
@@ -61,7 +60,7 @@ export default function ({
       .filter(Boolean);
 
     if (editingProduct) {
-      onUpdateProduct({
+      updateProduct({
         ...editingProduct,
         sku: formData.sku.trim() || editingProduct.sku,
         name: formData.name.trim(),
@@ -75,7 +74,7 @@ export default function ({
         desc: formData.desc.trim(),
       });
     } else {
-      onAddProduct({
+      addProduct({
         sku: formData.sku.trim() || `RK-${Date.now().toString().slice(-4)}`,
         name: formData.name.trim(),
         category: formData.category,
@@ -208,7 +207,7 @@ export default function ({
 
         <div className="md:col-span-2 flex justify-end gap-2">
           {editingProduct && (
-            <Button type="button" onClick={resetForm}>
+            <Button type="button" onClick={resetProducts}>
               BATAL
             </Button>
           )}
@@ -243,10 +242,7 @@ export default function ({
                   <Button type="button" onClick={() => handleEditClick(item)}>
                     EDIT
                   </Button>
-                  <Button
-                    type="button"
-                    onClick={() => onDeleteProduct(item.id)}
-                  >
+                  <Button type="button" onClick={() => deleteProduct(item.id)}>
                     HAPUS
                   </Button>
                 </td>

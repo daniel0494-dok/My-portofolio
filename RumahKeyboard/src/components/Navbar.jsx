@@ -2,13 +2,12 @@ import Button from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-export default function Navbar({
-  totalItems,
-  onOpenCart,
-  isAdminView,
-  onToggleAdmin,
-}) {
+export default function Navbar({ totalItems, onOpenCart }) {
+  const location = useLocation();
+  const isAdminPage = location.pathname === "/admin";
+
   const menu = ["KEYBOARDS", "SWITCHES", "KEYCAPS", "MODDING & LUBE"];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -40,9 +39,11 @@ export default function Navbar({
               {totalItems}
             </span>
           </Button>
-          <Button type="button" onClick={onToggleAdmin}>
-            {isAdminView ? "KEMBALI KE TOKO" : "ADMIN"}
-          </Button>
+          <Link to={isAdminPage ? "/" : "/admin"}>
+            <Button type="button">
+              {isAdminPage ? "KEMBALI KE TOKO" : "ADMIN"}
+            </Button>
+          </Link>
           <Button
             onClick={() => setIsOpen((prev) => !prev)}
             className={"md:hidden"}
