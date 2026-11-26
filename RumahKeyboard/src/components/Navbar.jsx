@@ -3,7 +3,12 @@ import { ShoppingCart } from "lucide-react";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 
-export default function Navbar({ totalItems, onOpenCart }) {
+export default function Navbar({
+  totalItems,
+  onOpenCart,
+  isAdminView,
+  onToggleAdmin,
+}) {
   const menu = ["KEYBOARDS", "SWITCHES", "KEYCAPS", "MODDING & LUBE"];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +36,12 @@ export default function Navbar({ totalItems, onOpenCart }) {
           >
             <ShoppingCart className="h-5 w-5" />
             CART
-            <span className="bg-brand-900 px-2 rounded-xs">{totalItems}</span>
+            <span className="bg-brand-900 w-8 text-center text-sm font-bold tabular-nums shrink-0">
+              {totalItems}
+            </span>
+          </Button>
+          <Button type="button" onClick={onToggleAdmin}>
+            {isAdminView ? "KEMBALI KE TOKO" : "ADMIN"}
           </Button>
           <Button
             onClick={() => setIsOpen((prev) => !prev)}

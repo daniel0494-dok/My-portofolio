@@ -4,7 +4,9 @@ import Information from "./components/Information";
 import Catalogue from "./components/Catalogue";
 import Footer from "./components/Footer";
 import CartDrawer from "./components/ui/CartDrawer";
+import Admin from "./components/Admin";
 import { useState, useEffect } from "react";
+import { products as initialProducts } from "./data/product";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -51,12 +53,62 @@ function App() {
     0,
   );
 
+  const [products, setProducts] = useState(initialProducts);
+
+  // CREATE
+  const addProduct = (newProduct) => {
+    const productWithId = {
+      ...newProduct,
+      id: Date.now(),
+    };
+    setProducts((prev) => [productWithId, ...prev]);
+  };
+
+  // UPDATE
+  const updateProduct = (updateProduct) => {
+    setProducts((prev) =>
+      prev.map((item) => (item.id === updateProduct.id ? updateProduct : item)),
+    );
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === updateProduct.id
+          ? { ...updateProduct, qty: item.qty }
+          : item,
+      ),
+    );
+  };
+
+  // DELETE
+  const deleteProduct = (id) => {
+    setProducts((prev) => prev.filter((item) => item.id !== id));
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  // ADMIN
+  const [isAdminView, setIsAdminView] = useState(false);
+
   return (
     <>
-      <Navbar totalItems={totalItems} onOpenCart={() => setIsCartOpen(true)} />
-      <Hero />
-      <Catalogue onAddToCart={addToCart} />
-      <Information />
+      <Navbar
+        totalItems={totalItems}
+        onOpenCart={() => setIsCartOpen(true)}
+        isAdminView={isAdminView}
+        onToggleAdmin={() => setIsAdminView((prev) => !prev)}
+      />
+      {isAdminView ? (
+        <Admin
+          products={products}
+          onAddProduct={addProduct}
+          onUpdateProduct={updateProduct}
+          onDeleteProduct={deleteProduct}
+        />
+      ) : (
+        <>
+          <Hero />
+          <Catalogue products={products} onAddToCart={addToCart} />
+          <Information />
+        </>
+      )}
       <Footer />
       <CartDrawer
         isOpen={isCartOpen}

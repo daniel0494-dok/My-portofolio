@@ -1,9 +1,9 @@
-import { products } from "../data/product";
+// import { products } from "../data/product";
 import Button from "./ui/button";
 import Card from "./ui/card";
 import { useState } from "react";
 
-export default function Catalogue({ onAddToCart }) {
+export default function Catalogue({ products, onAddToCart }) {
   // FILTER HANDLER
   const categoryBtn = ["ALL", "KEYBOARD", "SWITCH", "ACCESORIES", "KEYCAPS"];
 
